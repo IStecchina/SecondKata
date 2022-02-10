@@ -8,7 +8,7 @@ namespace KataFizzBuzz
         {
             Console.WriteLine("FizzBuzz test");
             FizzBuzzCounter fb = new();
-            fb.PrintFizzBuzz(30);
+            fb.Counter(30).ForEach(s => Console.WriteLine(s));
             Console.ReadKey();
         }
     }
