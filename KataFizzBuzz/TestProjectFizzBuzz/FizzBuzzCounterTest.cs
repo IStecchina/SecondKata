@@ -15,17 +15,6 @@ namespace TestProjectFizzBuzz
         public void Setup()
         {
             _sut = new FizzBuzzCounter();
-            /*
-            var mock = new Mock<IFizzBuzzCounter>();
-            mock.Setup(x => x.Translate(3)).Returns("Fizz");
-            mock.Setup(x => x.Translate(5)).Returns("Buzz");
-            mock.Setup(x => x.Translate(15)).Returns("FizzBuzz");
-            mock.Setup(x => x.Translate(1)).Returns("1");
-            mock.Setup(x => x.Translate(2)).Returns("2");
-            mock.Setup(x => x.Translate(4)).Returns("4");
-            _sut = mock.Object;
-            */
-
         }
 
         [TestCase(1, ExpectedResult = "1")]
@@ -41,18 +30,18 @@ namespace TestProjectFizzBuzz
         [Test]
         public void TestFizzBuzzCounter()
         {
-            var expected = new List<string> { "1", "2", "Fizz" }; //continuous until your input number... o try to make a new test
-            var actual = _sut.Counter(3);
+            var expected = new List<string> { "1", "2", "Fizz", "4", "Buzz", "Fizz" };
+            var actual = _sut.Counter(6);
             Assert.AreEqual(expected, actual);
         }
 
         [Test]
         public void TestFizzBuzzCounter2()
         {
-            var actual = _sut.Counter(30);
-            Assert.IsTrue(actual.FindAll(s =>s.Contains("Fizz")).Count == 10);
-            Assert.IsTrue(actual.FindAll(s => s.Contains("Buzz")).Count == 6);
-            Assert.IsTrue(actual.FindAll(s => s.Equals("FizzBuzz")).Count == 2);
+            var actual = _sut.Counter(300);
+            Assert.IsTrue(actual.FindAll(s =>s.Contains("Fizz")).Count == 100);
+            Assert.IsTrue(actual.FindAll(s => s.Contains("Buzz")).Count == 60);
+            Assert.IsTrue(actual.FindAll(s => s.Equals("FizzBuzz")).Count == 20);
         }
 
 
