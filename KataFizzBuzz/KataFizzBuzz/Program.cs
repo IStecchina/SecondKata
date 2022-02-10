@@ -6,7 +6,10 @@ namespace KataFizzBuzz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("FizzBuzz test");
+            FizzBuzzCounter fb = new();
+            fb.PrintFizzBuzz(30);
+            Console.ReadKey();
         }
     }
 }

@@ -29,5 +29,10 @@ namespace KataFizzBuzz
             };
         }
 
+        public void PrintFizzBuzz(int input)
+        {
+            Counter(input).ForEach(s => Console.WriteLine(s));
+        }
+
     }
 }
