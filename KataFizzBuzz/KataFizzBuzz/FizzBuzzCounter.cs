@@ -10,12 +10,23 @@ namespace KataFizzBuzz
     {
         public List<string> Counter(int input)
         {
-            throw new NotImplementedException();
+            List<string> outputList = new();
+            for (int i = 1; i <= input; i++)
+            {
+                outputList.Add(Translate(i));
+            }
+            return outputList;
         }
 
         public string Translate(int input)
         {
-            return string.Empty;
+            return (input % 3 == 0, input % 5 == 0) switch
+            {
+                (false, false) => input.ToString(),
+                (true, false) => "Fizz",
+                (false, true) => "Buzz",
+                (true, true) => "FizzBuzz"
+            };
         }
 
     }
